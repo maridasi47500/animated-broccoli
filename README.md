@@ -4,5 +4,5 @@ trip planner
 - téléphone  , telecom aker
 - gps
 - places 
-- job, fake phone, fàke 
-email, fake bank, fake e commerce,
+- job, fake phone calls, fake sms, fàke 
+email, fake bank, fake e commerce, fake chat
