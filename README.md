@@ -1,7 +1,8 @@
 # animated-broccoli
 
 trip planner
-telejpne , telecom aker
+- téléphone  , telecom aker
 - gps
 - places 
-- job
+- job, fake phone, fàke 
+email, fake bank, fake e commerce,
