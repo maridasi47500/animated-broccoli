@@ -6,3 +6,4 @@ trip planner
 - places 
 - job, fake phone calls, fake sms, fàke 
 email, fake bank, fake e commerce, fake chat
+- fake job
