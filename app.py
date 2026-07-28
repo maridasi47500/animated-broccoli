@@ -30,49 +30,75 @@ def add_one_job():
     if request.method == 'POST':
 
         the_username = "anonyme"
-        one_user = query_db("insert into job (name,description) values (:name,:description)",request.form)
+        one_user = query_db("insert into job (name) values (:name)",request.form)
         user = query_db('select * from job')
         return render_template("jobform.html", jobs=user, one_user=one_user, the_title="add new job")
     user = query_db('select * from job')
     one_user = query_db("select * from job limit 1", one=True)
     return render_template("jobform.html", jobs=user, one_user=one_user, the_title="add new job")
 
-@app.route("/add_one_places", methods=["GET","POST"])
-def add_one_places():
+@app.route("/add_one_phonecontact", methods=["GET","POST"])
+def add_one_phonecontact():
 
     if request.method == 'POST':
 
         the_username = "anonyme"
-        one_user = query_db("insert into places (name,lat,lon,) values (:name,:lat,:lon,:)",request.form)
-        user = query_db('select * from places')
-        return render_template("placesform.html", placess=user, one_user=one_user, the_title="add new places")
-    user = query_db('select * from places')
-    one_user = query_db("select * from places limit 1", one=True)
-    return render_template("placesform.html", placess=user, one_user=one_user, the_title="add new places")
+        one_user = query_db("insert into phonecontact (name,phone,email) values (:name,:phone,:email)",request.form)
+        user = query_db('select * from phonecontact')
+        return render_template("phonecontactform.html", phonecontacts=user, one_user=one_user, the_title="add new phonecontact")
+    user = query_db('select * from phonecontact')
+    one_user = query_db("select * from phonecontact limit 1", one=True)
+    return render_template("phonecontactform.html", phonecontacts=user, one_user=one_user, the_title="add new phonecontact")
 
-@app.route("/add_one_user", methods=["GET","POST"])
-def add_one_user():
-
-    if request.method == 'POST':
-
-        the_username = "anonyme"
-        one_user = query_db("insert into user (username,email,password,phone,country_id,job_id) values (:username,:email,:password,:phone,:country_id,:job_id)",request.form)
-        user = query_db('select * from user')
-        return render_template("userform.html", users=user, one_user=one_user, the_title="add new user")
-    user = query_db('select * from user')
-    one_user = query_db("select * from user limit 1", one=True)
-    return render_template("userform.html", users=user, one_user=one_user, the_title="add new user")
-
-@app.route("/add_one_fakecommunication", methods=["GET","POST"])
-def add_one_fakecommunication():
+@app.route("/add_one_fake_sms", methods=["GET","POST"])
+def add_one_fake_sms():
 
     if request.method == 'POST':
 
         the_username = "anonyme"
-        one_user = query_db("insert into fakecommunication (com_type,content,description) values (:com_type,:content,:description)",request.form)
-        user = query_db('select * from fakecommunication')
-        return render_template("fakecommunicationform.html", fakecommunications=user, one_user=one_user, the_title="add new fakecommunication")
-    user = query_db('select * from fakecommunication')
-    one_user = query_db("select * from fakecommunication limit 1", one=True)
-    return render_template("fakecommunicationform.html", fakecommunications=user, one_user=one_user, the_title="add new fakecommunication")
+        one_user = query_db("insert into fake_sms (contact1_id,contact2_id,text) values (:contact1_id,:contact2_id,:text)",request.form)
+        user = query_db('select * from fake_sms')
+        return render_template("fake_smsform.html", fake_smss=user, one_user=one_user, the_title="add new fake_sms")
+    user = query_db('select * from fake_sms')
+    one_user = query_db("select * from fake_sms limit 1", one=True)
+    return render_template("fake_smsform.html", fake_smss=user, one_user=one_user, the_title="add new fake_sms")
+
+@app.route("/add_one_fake_email", methods=["GET","POST"])
+def add_one_fake_email():
+
+    if request.method == 'POST':
+
+        the_username = "anonyme"
+        one_user = query_db("insert into fake_email (contact1_id,contact2_id,object,text) values (:contact1_id,:contact2_id,:object,:text)",request.form)
+        user = query_db('select * from fake_email')
+        return render_template("fake_emailform.html", fake_emails=user, one_user=one_user, the_title="add new fake_email")
+    user = query_db('select * from fake_email')
+    one_user = query_db("select * from fake_email limit 1", one=True)
+    return render_template("fake_emailform.html", fake_emails=user, one_user=one_user, the_title="add new fake_email")
+
+@app.route("/add_one_product", methods=["GET","POST"])
+def add_one_product():
+
+    if request.method == 'POST':
+
+        the_username = "anonyme"
+        one_user = query_db("insert into product (title,description,price,stock) values (:title,:description,:price,:stock)",request.form)
+        user = query_db('select * from product')
+        return render_template("productform.html", products=user, one_user=one_user, the_title="add new product")
+    user = query_db('select * from product')
+    one_user = query_db("select * from product limit 1", one=True)
+    return render_template("productform.html", products=user, one_user=one_user, the_title="add new product")
+
+@app.route("/add_one_photo", methods=["GET","POST"])
+def add_one_photo():
+
+    if request.method == 'POST':
+
+        the_username = "anonyme"
+        one_user = query_db("insert into photo (pic,description,location,lat,lon,phonecontact_id) values (:pic,:description,:location,:lat,:lon,:phonecontact_id)",request.form)
+        user = query_db('select * from photo')
+        return render_template("photoform.html", photos=user, one_user=one_user, the_title="add new photo")
+    user = query_db('select * from photo')
+    one_user = query_db("select * from photo limit 1", one=True)
+    return render_template("photoform.html", photos=user, one_user=one_user, the_title="add new photo")
 

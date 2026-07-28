@@ -28,28 +28,40 @@ INSERT OR IGNORE INTO contacts (contact_id, first_name, last_name, email, phone)
 VALUES( '2', 'anne onim', 'onim', 'anne.onim@email.com', '+86877779898');
 create table if not exists job(
         id integer primary key autoincrement,
-        name text,
-            description text
+        name text
                     );
-create table if not exists places(
+create table if not exists phonecontact(
         id integer primary key autoincrement,
         name text,
+            phone text,
+            email text
+                    );
+create table if not exists fake_sms(
+        id integer primary key autoincrement,
+        contact1_id text,
+            contact2_id text,
+            text text
+                    );
+create table if not exists fake_email(
+        id integer primary key autoincrement,
+        contact1_id text,
+            contact2_id text,
+            object text,
+            text text
+                    );
+create table if not exists product(
+        id integer primary key autoincrement,
+        title text,
+            description text,
+            price text,
+            stock text
+                    );
+create table if not exists photo(
+        id integer primary key autoincrement,
+        pic text,
+            description text,
+            location text,
             lat text,
             lon text,
-             text
-                    );
-create table if not exists user(
-        id integer primary key autoincrement,
-        username text,
-            email text,
-            password text,
-            phone text,
-            country_id text,
-            job_id text
-                    );
-create table if not exists fakecommunication(
-        id integer primary key autoincrement,
-        com_type text,
-            content text,
-            description text
+            phonecontact_id text
                     );

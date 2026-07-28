@@ -1,13 +1,18 @@
 {% extends 'base.html' %}
 
+{% block montitre %}
+debut de mes mots: BIenvenue dans web designer
+{% endblock %}
 {% block content %}
 <h1># animated-broccoli</h1>
 {% for x in users | reverse %}
  <li>{{ x["first_name"]  }}</li>
 
 {% endfor %} 
+fin de mes mots : Créer ton site pour mobile ou ipad ou ordinateur en créant un CSS avec media queries.
+Imagine tes  métier : Le métier de technicien fibre optique · Le métier dingénieur réseaux et télécom · Le métier de vendeur en téléphonie, ou web designer.
 {% endblock %}
 {% block liens %}
 <a href="/">welcome</a>
 {% endblock %}
-<a href="/add_one_job"> add one job</a><a href="/add_one_places"> add one places</a><a href="/add_one_user"> add one user</a><a href="/add_one_fakecommunication"> add one fakecommunication</a>
+<a href="/add_one_job"> add one job</a><a href="/add_one_phonecontact"> add one phonecontact</a><a href="/add_one_fake_sms"> add one fake_sms</a><a href="/add_one_fake_email"> add one fake_email</a><a href="/add_one_product"> add one product</a><a href="/add_one_photo"> add one photo</a>
